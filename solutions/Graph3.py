@@ -28,7 +28,7 @@ class Edge(tuple):
     def __new__(cls, *vs):
         """The Edge constructor takes two vertices."""
         if len(vs) != 2:
-            raise ValueError, 'Edges must connect exactly two vertices.'
+            raise(ValueError, 'Edges must connect exactly two vertices.')
         return tuple.__new__(cls, vs)
 
     def __repr__(self):
@@ -76,15 +76,15 @@ class Graph(dict):
 
 def main(script, *args):
     v = Vertex('v')
-    print v
+    print(v)
     w = Vertex('w')
-    print w
+    print(w)
     e = Edge(v, w)
-    print e
+    print(e)
     g = Graph([v,w], [e])
-    print g
+    print(g)
 
 
-if __name__ == '__main__':
+if(__name__ == '__main__'):
     import sys
     main(*sys.argv)
